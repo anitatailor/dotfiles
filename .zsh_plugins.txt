@@ -1,0 +1,45 @@
+
+zdharma/fast-syntax-highlighting
+
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-history-substring-search
+zsh-users/zsh-completions
+
+robbyrussell/oh-my-zsh
+robbyrussell/oh-my-zsh path:plugins/common-aliases
+robbyrussell/oh-my-zsh path:plugins/compleat
+robbyrussell/oh-my-zsh path:plugins/git-extras
+robbyrussell/oh-my-zsh path:plugins/colored-man-pages
+robbyrussell/oh-my-zsh path:plugins/brew
+robbyrussell/oh-my-zsh path:plugins/osx
+robbyrussell/oh-my-zsh path:plugins/fasd
+robbyrussell/oh-my-zsh path:plugins/copyfile
+robbyrussell/oh-my-zsh path:plugins/copydir
+robbyrussell/oh-my-zsh path:plugins/copybuffer
+robbyrussell/oh-my-zsh path:plugins/command-not-found
+robbyrussell/oh-my-zsh path:plugins/dircycle
+robbyrussell/oh-my-zsh path:plugins/dirhistory
+robbyrussell/oh-my-zsh path:plugins/extract
+robbyrussell/oh-my-zsh path:plugins/zsh_reload
+robbyrussell/oh-my-zsh path:plugins/zsh-navigation-tools
+robbyrussell/oh-my-zsh path:plugins/wd
+robbyrussell/oh-my-zsh path:plugins/urltools
+robbyrussell/oh-my-zsh path:plugins/sublime
+robbyrussell/oh-my-zsh path:plugins/iterm2
+robbyrussell/oh-my-zsh path:plugins/web-search
+robbyrussell/oh-my-zsh path:plugins/history
+robbyrussell/oh-my-zsh path:plugins/gitignore
+
+caarlos0/zsh-mkc
+supercrabtree/k
+marzocchi/zsh-notify
+mollifier/cd-gitroot
+djui/alias-tips
+oz/safe-paste
+bric3/nice-exit-code
+mafredri/zsh-async
+
+carloscuesta/materialshell
+
+#denysdovhan/spaceship-prompt
+#sindresorhus/pure
