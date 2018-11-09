@@ -120,6 +120,7 @@ SPACESHIP_RPROMPT_ORDER=(
 
 
 # Keybindings
+bindkey -e      # keep in emacs mode for Ctrl+<key> actions
 bindkey '^[[A'    history-substring-search-up
 bindkey '^[[B'    history-substring-search-down
 bindkey "^U"      backward-kill-line
@@ -130,15 +131,6 @@ bindkey '^[[H'  dirhistory_zle_dirhistory_back
 bindkey '^[[F'  dirhistory_zle_dirhistory_future
 bindkey '^[[5~' dirhistory_zle_dirhistory_up
 bindkey '^[[6~' dirhistory_zle_dirhistory_down
-
-
-# Open new tabs in same directory
-#if [[ "$TERM_PROGRAM" == "Apple_Terminal" ]]; then
-#  function chpwd {
-#    printf '\e]7;%s\a' "file://$HOSTNAME${PWD// /%20}"
-#  }
-#  chpwd
-#fi
 
 
 #############
