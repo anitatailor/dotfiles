@@ -41,5 +41,6 @@ mafredri/zsh-async
 
 carloscuesta/materialshell
 
-#denysdovhan/spaceship-prompt
+## prompt
+denysdovhan/spaceship-prompt
 #sindresorhus/pure
