@@ -4,27 +4,8 @@ ZSH="$(antibody home)/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SL
 # for oh-my-zsh
 DISABLE_AUTO_UPDATE=true
 
-# Set ZSH_CACHE_DIR to the path where cache files should be created
-# or else we will use the default cache/
-if [[ -z "$ZSH_CACHE_DIR" ]]; then
-  ZSH_CACHE_DIR="$ZSH/cache"
-fi
-
-# Set ZSH_CUSTOM to the path where your custom config files
-# and plugins exists, or else we will use the default custom/
-if [[ -z "$ZSH_CUSTOM" ]]; then
-    ZSH_CUSTOM="$ZSH/custom"
-fi
-
-# Migrate .zsh-update file to $ZSH_CACHE_DIR
-if [ -f ~/.zsh-update ] && [ ! -f ${ZSH_CACHE_DIR}/.zsh-update ]; then
-    mv ~/.zsh-update ${ZSH_CACHE_DIR}/.zsh-update
-fi
-
-
 # add a function path
 fpath=($ZSH/functions $ZSH/completions $fpath)
-
 
 # Enable autocompletions
 autoload -Uz compaudit compinit 
@@ -37,13 +18,13 @@ else
   compinit -C -i
 fi
 
-
 zmodload -i zsh/complist
 
 # Save history so we get auto suggestions
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=5000
 SAVEHIST=$HISTSIZE
+
 
 # zsh Options
 setopt cdablevars				 # jump to path vars from anywhere
@@ -74,6 +55,8 @@ setopt globdots					 # ignore dot while matching hidden files
 setopt noclobber				 # prevent clobbering files use '>!' to clobber file
 #setopt cshjunkiequotes           # illegal to leave off closing quotes
 unsetopt case_glob               # Case-insensitive matching
+
+
 
 typeset -U path cdpath fpath
 
