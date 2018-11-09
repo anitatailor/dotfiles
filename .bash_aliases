@@ -5,6 +5,8 @@ alias ...='../..'
 alias ....='../../..'
 alias -- -='cd -'
 
+alias c=clear
+
 # some more ls aliases
 
 alias ll='ls -alF'

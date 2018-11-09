@@ -120,17 +120,32 @@ SPACESHIP_RPROMPT_ORDER=(
 
 
 # Keybindings
+#ref https://stackoverflow.com/questions/6205157/iterm-2-how-to-set-keyboard-shortcuts-to-jump-to-beginning-end-of-line
 bindkey -e      # keep in emacs mode for Ctrl+<key> actions
+
+# moves
+bindkey "[D" backward-word
+bindkey "[C" forward-word
+bindkey "^[A" beginning-of-line
+bindkey "^[E" end-of-line
+
+
+
 bindkey '^[[A'    history-substring-search-up
 bindkey '^[[B'    history-substring-search-down
 bindkey "^U"      backward-kill-line
 bindkey "^X\\x7f" backward-kill-line
 bindkey "^X^_"    redo
 
+# dirhist fn+arrow
 bindkey '^[[H'  dirhistory_zle_dirhistory_back
 bindkey '^[[F'  dirhistory_zle_dirhistory_future
 bindkey '^[[5~' dirhistory_zle_dirhistory_up
 bindkey '^[[6~' dirhistory_zle_dirhistory_down
+
+# dircycle - fn+shift+arrow
+bindkey '^[[1;2H' insert-cycledleft
+bindkey '^[[1;2F' insert-cycledright
 
 
 #############
