@@ -124,18 +124,12 @@ SPACESHIP_RPROMPT_ORDER=(
 bindkey -e      # keep in emacs mode for Ctrl+<key> actions
 
 # moves
-bindkey "[D" backward-word
-bindkey "[C" forward-word
-bindkey "^[A" beginning-of-line
-bindkey "^[E" end-of-line
 
-
+bindkey "^[U"      backward-kill-line
+bindkey "^X^_"    redo
 
 bindkey '^[[A'    history-substring-search-up
 bindkey '^[[B'    history-substring-search-down
-bindkey "^U"      backward-kill-line
-bindkey "^X\\x7f" backward-kill-line
-bindkey "^X^_"    redo
 
 # dirhist fn+arrow
 bindkey '^[[H'  dirhistory_zle_dirhistory_back
