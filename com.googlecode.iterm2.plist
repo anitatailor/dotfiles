@@ -4120,7 +4120,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>767 87 445 77 0 0 1440 900 </string>
+	<string>767 33 445 77 0 0 1440 900 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>520 578 400 129 0 0 1440 900 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
@@ -4128,7 +4128,7 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>704 244 697 456 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>399 310 918 514 0 0 1440 900 </string>
+	<string>428 356 918 514 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>707 0 730 900 0 0 1440 900 </string>
 	<key>New Bookmarks</key>
@@ -4497,7 +4497,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>TerminusTTF 12</string>
+			<string>FiraCode-Regular 14</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>

@@ -94,9 +94,9 @@ echo > /var/log/tomcat8/log/application.log
 echo > /var/log/tomcat8/log/profile/profile.log
 echo > /var/log/tomcat8/log/reqresp/api.log
 echo > /var/log/tomcat8/log/reqresp/extapi.log
-rm /var/log/tomcat8/log/reqresp/*.gz
-rm /var/log/tomcat8/log/profile/*.gz
-rm /var/log/tomcat8/log/*.gz
+rm -f /var/log/tomcat8/log/reqresp/*.gz
+rm -f /var/log/tomcat8/log/profile/*.gz
+rm -f /var/log/tomcat8/log/*.gz
 
 gradle clean bootrun -Dspring.profiles.active=dev -Djavax.net.ssl.keyStore=/Users/saswatdutta/keys/client-keystore.jks -Djavax.net.ssl.keyStorePassword=changeit
 
