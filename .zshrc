@@ -155,6 +155,8 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 
 # Colorful ls
 alias ls='gls --color=auto -v -F -h'
+# set LS_COLORS Borrowed from https://wiki.archlinux.org/index.php/Color_output_in_console#less .
+eval $(gdircolors -p | perl -pe 's/^((CAP|S[ET]|O[TR]|M|E)\w+).*/$1 00/' | gdircolors -)
 
 source ~/.bash_aliases
 
@@ -177,6 +179,10 @@ if type lesspipe.sh >/dev/null 2>&1; then
   export LESSOPEN='|lesspipe.sh %s'
 fi
 
+## faster completions for git files
+__git_files () { 
+    _wanted files expl 'local files' _files     
+}
 
 
 #aws cli

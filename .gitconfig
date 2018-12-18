@@ -27,6 +27,7 @@
 	untracked = cyan
 [merge]
     conflictstyle = diff3
+	tool = kdiff3
 [rerere]
     enabled = true
 [alias]
@@ -128,3 +129,9 @@
 	newHighlight = green bold 22
 [diff-so-fancy]
 	useUnicodeRuler = true
+[diff]
+	guitool = kdiff3
+[difftool "kdiff3"]
+	trustExitCode = false
+[mergetool "kdiff3"]
+	trustExitCode = false

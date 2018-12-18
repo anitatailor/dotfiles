@@ -16,8 +16,12 @@ alias la='ls -A'
 alias l='ls -CF'
 
 ## sshttle
-stl () {
+stl-all () {
   sshuttle --dns -D --pidfile=/tmp/sshuttle.pid -x 13.126.0.23 -r sd5711@13.126.0.23 0.0.0.0/0 && echo 'Connected'
+}
+
+stl () {
+  sshuttle --dns -D --pidfile=/tmp/sshuttle.pid -x 13.126.0.23 -r sd5711@13.126.0.23 10.0.0.0/8 && echo 'Connected'
 }
 
 stl-off () {
@@ -143,8 +147,8 @@ app_run () {
 }
 
 ######### git alias #######
-
-alias g="git"
+alias git="/usr/local/bin/git"
+alias g="/usr/local/bin/git"
 
 alias gl="git l"
 alias gl5="git l -5"
@@ -201,4 +205,10 @@ v="$HOME/code/vyom"
 p="$HOME/code/vyom/payments"
 s="$HOME/code/vyom/supply"
 fe="$HOME/code/vyom/fuel"
+
+# mac dns flush
+flush-dns () {
+  sudo dscacheutil -flushcache
+  sudo killall -HUP mDNSResponder
+}
 
