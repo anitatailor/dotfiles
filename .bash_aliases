@@ -16,17 +16,23 @@ alias la='ls -A'
 alias l='ls -CF'
 
 ## sshttle
-stl-all () {
-  sshuttle --dns -D --pidfile=/tmp/sshuttle.pid -x 13.126.0.23 -r sd5711@13.126.0.23 0.0.0.0/0 && echo 'Connected'
+stl-aws () {
+  sshuttle --dns -D --pidfile=/tmp/sshuttle.pid -x 13.126.0.23 -r sd5711@13.126.0.23 0.0.0.0/8 && echo 'Connected'
 }
 
 stl () {
-  sshuttle --dns -D --pidfile=/tmp/sshuttle.pid -x 13.126.0.23 -r sd5711@13.126.0.23 10.0.0.0/8 && echo 'Connected'
+  sshuttle --dns -D --pidfile=/tmp/sshuttle.pid -x 13.126.0.23 -r sd5711@13.126.0.23 10.0.0.0/0 && echo 'Connected'
 }
 
 stl-off () {
   [[ -f $SSHUTTLE_PID_FILE ]] && kill $(cat /tmp/sshuttle.pid) && echo 'Disconnected' 
 }
+
+## dump db
+dump-db () {
+	mycli -p backend mysql://backend@mysql-dump.vyom.com:3306/vyom_payments	
+}
+
 
 #alias stl="sshuttle --dns -r sd5711@13.126.0.23 0.0.0.0/0"
 #alias stl="sshuttle --dns -x 13.126.0.23 -r sd5711@13.126.0.23 0.0.0.0/0"

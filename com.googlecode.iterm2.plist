@@ -4386,7 +4386,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>428 420 928 394 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>466 473 570 427 0 0 1440 900 </string>
+	<string>0 473 570 427 0 0 1440 900 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -4938,7 +4938,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>89736AD0-1642-4B00-83F8-6245160C4F54</string>
 	<key>NoSyncLastTipTime</key>
-	<real>564228769.43173397</real>
+	<real>565090530.63136303</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -5013,6 +5013,15 @@
 		<string>0060</string>
 		<string>0061</string>
 		<string>0062</string>
+		<string>0063</string>
+		<string>0064</string>
+		<string>0065</string>
+		<string>0066</string>
+		<string>0067</string>
+		<string>0068</string>
+		<string>0069</string>
+		<string>0070</string>
+		<string>0071</string>
 	</array>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>0</integer>
@@ -5066,7 +5075,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-11-18T12:04:49Z</date>
+	<date>2018-12-23T05:23:36Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SmartPlacement</key>
@@ -5088,9 +5097,9 @@
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>findMode_iTerm</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>iTerm Version</key>
-	<string>3.2.5</string>
+	<string>3.2.6</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

@@ -113,6 +113,8 @@
 # Delete any branches that have been merged into master
 # See also: https://gist.github.com/robmiller/5133264
 	delete-merged-branches = "!git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+	unmerged = !git --no-pager diff --name-only --diff-filter=U
+	conflicts = !git --no-pager diff --check
 
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
