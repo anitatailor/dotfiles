@@ -28,9 +28,9 @@ stl-off () {
   [[ -f $SSHUTTLE_PID_FILE ]] && kill $(cat /tmp/sshuttle.pid) && echo 'Disconnected' 
 }
 
-## dump db
-dump-db () {
-	mycli -p backend mysql://backend@mysql-dump.vyom.com:3306/vyom_payments	
+
+prod_dump () {
+	mycli -d prod_dump	
 }
 
 
