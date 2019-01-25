@@ -159,7 +159,7 @@ alias ls='gls --color=auto -v -F -h'
 eval $(gdircolors -p | perl -pe 's/^((CAP|S[ET]|O[TR]|M|E)\w+).*/$1 00/' | gdircolors -)
 
 source ~/.bash_aliases
-
+source /Users/saswatdutta/git-extras/etc/git-extras-completion.zsh
 
 # set options for less
 export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'

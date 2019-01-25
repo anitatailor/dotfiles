@@ -119,4 +119,6 @@ output.even-row = ""
 [alias_dsn]
 # example_dsn = mysql://[user[:password]@][host][:port][/dbname]
 prod_dump = mysql://backend:backend@mysql-dump.vyom.com:3306/vyom_payments
+pay_stg = mysql://vyom_payments_api:api@vyompayments@vyom-stg.cqgxnxnhglky.ap-south-1.rds.amazonaws.com:3306/vyom_payments
+
 

@@ -84,6 +84,16 @@ unmnt-logs ()
   umount ~/mnt/remote-logs/
 }
 
+
+### aws cli
+
+alias kms-get="aws ssm get-parameters --region ap-south-1 --with-decryption --names "
+
+ec2-addr () {
+  aws ec2 describe-instances --filters "Name=tag:Name,Values=$1" "Name=instance-state-code,Values=16" --query 'Reservations[*].Instances[*].[PrivateIpAddress]'
+}
+
+
 ### clear mac net prefs
 del-mac-net-prefs () {
   cd /Library/Preferences/SystemConfiguration/
