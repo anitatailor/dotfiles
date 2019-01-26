@@ -96,12 +96,26 @@ unmnt-logs ()
 
 alias kms-get="aws ssm get-parameters --region ap-south-1 --with-decryption --names "
 
-ec2-addr () {
-	
+ec2-ip () {
+
+	fuzzy_name="*$1*"
+
   aws ec2 describe-instances \
-  --filters "Name=tag:Name,Values=$1" "Name=instance-state-code,Values=16" \
-  --query 'Reservations[*].Instances[*].[PrivateIpAddress]' \
-  --output text
+  --filters "Name=tag:Name,Values=$fuzzy_name" "Name=instance-state-code,Values=16" \
+  --query 'Reservations[*].Instances[*].[Tags[?Key==`Name`].Value,PrivateIpAddress]' \
+  --output text --no-paginate
+}
+
+ec2-ip-json () {
+
+  fuzzy_name="*$1*"
+
+  aws ec2 describe-instances \
+  --filters "Name=tag:Name,Values=$fuzzy_name" "Name=instance-state-code,Values=16" \
+  --query 'Reservations[*].Instances[*].[Tags[?Key==`Name`].Value,PrivateIpAddress]' \
+  --no-paginate \
+  | jq '[ .[] | { name: .[0][0][0], ip: .[0][1] } ]' \
+  | jq 'group_by(.name) | map({ (.[0].name): ([.[].ip]) })'
 }
 
 
