@@ -28,15 +28,22 @@ stl-off () {
   [[ -f $SSHUTTLE_PID_FILE ]] && kill $(cat /tmp/sshuttle.pid) && echo 'Disconnected' 
 }
 
+#alias stl="sshuttle --dns -r sd5711@13.126.0.23 0.0.0.0/0"
+#alias stl="sshuttle --dns -x 13.126.0.23 -r sd5711@13.126.0.23 0.0.0.0/0"
+#"sshuttle --dns --verbose --exclude 13.126.0.23 --remote sd5711@13.126.0.23 0.0.0.0/0"
 
+
+#### db configs
 prod_dump () {
 	mycli -d prod_dump	
 }
 
 
-#alias stl="sshuttle --dns -r sd5711@13.126.0.23 0.0.0.0/0"
-#alias stl="sshuttle --dns -x 13.126.0.23 -r sd5711@13.126.0.23 0.0.0.0/0"
-#"sshuttle --dns --verbose --exclude 13.126.0.23 --remote sd5711@13.126.0.23 0.0.0.0/0"
+### ssh
+
+ssh-ip () {
+	ssh -G "$1" | head -2
+}
 
 tnl () 
 
@@ -90,7 +97,11 @@ unmnt-logs ()
 alias kms-get="aws ssm get-parameters --region ap-south-1 --with-decryption --names "
 
 ec2-addr () {
-  aws ec2 describe-instances --filters "Name=tag:Name,Values=$1" "Name=instance-state-code,Values=16" --query 'Reservations[*].Instances[*].[PrivateIpAddress]'
+	
+  aws ec2 describe-instances \
+  --filters "Name=tag:Name,Values=$1" "Name=instance-state-code,Values=16" \
+  --query 'Reservations[*].Instances[*].[PrivateIpAddress]' \
+  --output text
 }
 
 
@@ -227,4 +238,5 @@ flush-dns () {
   sudo dscacheutil -flushcache
   sudo killall -HUP mDNSResponder
 }
+
 
