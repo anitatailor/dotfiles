@@ -46,29 +46,26 @@ ssh-ip () {
 }
 
 tnl () 
-
 {
-
   DB=vyom-"$1".cqgxnxnhglky.ap-south-1.rds.amazonaws.com
-
   ssh -C -f sd5711@13.126.0.23 -L 3306:"$DB":3306 sleep 300
-
 }
 
 ## ssh
 
 jmp ()
-
 {
-
   ssh -J bastion sd5711@"$1"
+}
 
+copy-vim-config() {
+  scp -rp ~/.vim  "$1":
+  scp ~/.vimrc  "$1":
 }
 
 ## logs
 
 mnt-logs ()
-
 {
 
   #unmnt-logs $2
