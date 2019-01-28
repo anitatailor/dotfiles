@@ -3,7 +3,6 @@ if exists("b:current_syntax")
     finish
 endif
 
-set number
 
 "syntax match date contained "^\[[0-9]\{4}\-[0-9]\{2}\-[0-9]\{2} [0-9]\{2}:[0-9]\{2}:[0-9]\{2}:[0-9]\{3}\]" nextgroup=threadid
 "syntax match threadid contained "\[.*\]" nextgroup=level
