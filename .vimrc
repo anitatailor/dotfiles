@@ -49,4 +49,3 @@ let g:spacegray_underline_search = 1
 let g:spacegray_italicize_comments = 1
 
 highlight Search ctermfg=9 	guifg=#ff0000 ctermbg=15 guibg=#ffffff gui=bold cterm=bold
-
