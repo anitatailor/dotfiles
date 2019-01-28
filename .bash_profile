@@ -14,6 +14,8 @@ if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
 
+eval "$(fasd --init auto)"
+
 #### git prompt ####
 GIT_PROMPT_ONLY_IN_REPO=1 # Use the default prompt when not in a git repo.
 GIT_PROMPT_FETCH_REMOTE_STATUS=1 # Avoid fetching remote status

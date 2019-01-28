@@ -20,5 +20,4 @@ highlight LogNormal	ctermfg=14	guifg=#00ffff
 highlight LogLow	ctermfg=10	guifg=#00ff00
 highlight LogLowest	ctermfg=102 guifg=#878787
 
-
 let b:current_syntax = 'log'

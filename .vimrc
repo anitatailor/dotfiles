@@ -40,10 +40,13 @@ if (has("termguicolors"))
 endif
 
 let base16colorspace=256  " Access colors present in 256 colorspace
-colorscheme spacegray
- 
+
+"colorscheme distinguished
+"colorscheme desert
+
+colorscheme spacegray 
 let g:spacegray_underline_search = 1
 let g:spacegray_italicize_comments = 1
 
-colorscheme distinguished
+highlight Search ctermfg=9 	guifg=#ff0000 ctermbg=15 guibg=#ffffff gui=bold cterm=bold
 
