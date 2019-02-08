@@ -25,7 +25,7 @@ set incsearch
 set hlsearch
 
 " Enable Elite mode, No ARRRROWWS!!!!
-let g:elite_mode=1
+"let g:elite_mode=1
 
 " Enable highlighting of the current line
 set cursorline
@@ -49,3 +49,8 @@ let g:spacegray_underline_search = 1
 let g:spacegray_italicize_comments = 1
 
 highlight Search ctermfg=9 	guifg=#ff0000 ctermbg=15 guibg=#ffffff gui=bold cterm=bold
+
+ if has('mouse')
+   set mouse=a
+ endif
+
