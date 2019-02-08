@@ -61,6 +61,8 @@ jmp ()
 copy-vim-config() {
   scp -rp ~/.vim  "$1":
   scp ~/.vimrc  "$1":
+  ssh "$1" 'cd ~/.vim/pack/tpope/start'
+  ssh "$1" 'vim -u NONE -c "helptags sensible/doc" -c q'
 }
 
 ## logs
