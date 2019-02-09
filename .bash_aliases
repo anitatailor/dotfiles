@@ -116,6 +116,13 @@ ec2-fuzzy-ip () {
   | jq 'group_by(.name) | map({ (.[0].name) : ([.[].ip]) })'
 }
 
+ebs-ver () {
+  aws elasticbeanstalk describe-environments \
+  --application-name "$1" \
+  --query 'Environments[*].[EnvironmentName,VersionLabel]' \
+  --output text --no-paginate
+}
+
 
 ### clear mac net prefs
 del-mac-net-prefs () {
