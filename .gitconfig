@@ -137,3 +137,7 @@
 	trustExitCode = false
 [mergetool "kdiff3"]
 	trustExitCode = false
+
+[tig] show-rev-graph = true
+[tig "color"] cursor = yellow red bold
+[tig "bind"] generic = P parent
