@@ -153,6 +153,9 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 
 ########### alias
 
+# epoch in sec to date-time
+alias from-unixtime='date -r ' 
+
 # Colorful ls
 alias ls='gls --color=auto -v -F -h'
 # set LS_COLORS Borrowed from https://wiki.archlinux.org/index.php/Color_output_in_console#less .
@@ -160,6 +163,8 @@ eval $(gdircolors -p | perl -pe 's/^((CAP|S[ET]|O[TR]|M|E)\w+).*/$1 00/' | gdirc
 
 source ~/.bash_aliases
 source /Users/saswatdutta/git-extras/etc/git-extras-completion.zsh
+
+
 
 # set options for less
 export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
@@ -187,7 +192,7 @@ __git_files () {
 
 #aws cli
 export PATH="$PATH":/Users/saswatdutta/Library/Python/3.7/bin/
-
+source /Users/saswatdutta/Library/Python/3.7/bin/aws_zsh_completer.sh
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/saswatdutta/.sdkman"

@@ -135,7 +135,7 @@ del-mac-net-prefs () {
 }
 
 ##### gradle bootrun
-alias gcb="gradle clean build"
+alias gcb="gw clean build"
 
 gbr () {
 
@@ -196,9 +196,13 @@ app_run () {
 alias git="/usr/local/bin/git"
 alias g="/usr/local/bin/git"
 
-alias gl="git l"
-alias gl5="git l -5"
-alias gl10="git l -10"
+gl () {
+    if [[ $# -eq 0 ]] ; then
+        git l -10
+    else
+        git l -"$1"
+    fi
+}
 
 alias gb="git branch"
 
