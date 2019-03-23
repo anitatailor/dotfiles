@@ -98,25 +98,8 @@ source <(antibody init)
 # Plugins
 antibody bundle < ~/.zsh_plugins.txt
 
-#config spaceship propmpt
-SPACESHIP_TIME_SHOW=true
-SPACESHIP_DIR_TRUNC=0
-SPACESHIP_DIR_TRUNC_REPO=false
-SPACESHIP_EXIT_CODE_SHOW=true
-SPACESHIP_GIT_PREFIX=''
-
-SPACESHIP_PROMPT_ORDER=(
-  dir           # Current directory section
-  git           # Git section (git_branch + git_status)
-  line_sep      # Line break
-  char          # Prompt character
-)
-
-SPACESHIP_RPROMPT_ORDER=(
-  time          # Time stamps section
-  exit_code     # Exit code section
-  exec_time     # Execution time
-)
+#prompts
+source ~/.space_ship_prompt_config
 
 
 # Keybindings
