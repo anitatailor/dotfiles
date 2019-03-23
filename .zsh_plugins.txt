@@ -42,5 +42,6 @@ mafredri/zsh-async
 carloscuesta/materialshell
 
 ## prompt
-denysdovhan/spaceship-prompt
+#denysdovhan/spaceship-prompt
 #sindresorhus/pure
+romkatv/powerlevel10k

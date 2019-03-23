@@ -99,8 +99,8 @@ source <(antibody init)
 antibody bundle < ~/.zsh_plugins.txt
 
 #prompts
-source ~/.space_ship_prompt_config
-
+#source ~/.space_ship_prompt_config
+source ~/.purepower
 
 # Keybindings
 #ref https://stackoverflow.com/questions/6205157/iterm-2-how-to-set-keyboard-shortcuts-to-jump-to-beginning-end-of-line
@@ -108,7 +108,7 @@ bindkey -e      # keep in emacs mode for Ctrl+<key> actions
 
 # moves
 
-bindkey "^[U"      backward-kill-line
+bindkey "^[U"     backward-kill-line
 bindkey "^X^_"    redo
 
 bindkey '^[[A'    history-substring-search-up
