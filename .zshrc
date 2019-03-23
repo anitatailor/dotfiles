@@ -186,7 +186,7 @@ fi
 
 ## faster completions for git files
 __git_files () { 
-    _wanted files expl 'local files' _files     
+    _wanted files expl 'local files' _files
 }
 
 

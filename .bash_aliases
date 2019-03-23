@@ -282,3 +282,6 @@ highlight() {
 grepe () {
 	grep --color -E "$1|$" $2
 }
+
+# httpie
+alias https='http --default-scheme=https'
