@@ -110,9 +110,8 @@ ec2-fuzzy-ip () {
 
   aws ec2 describe-instances \
   --filters "Name=tag:Name,Values=$fuzzy_name" "Name=instance-state-code,Values=16" \
-  --query 'Reservations[*].Instances[*].[Tags[?Key==`Name`].Value,PrivateIpAddress]' \
+  --query 'Reservations[].Instances[].{ name : Tags[?Key==`Name`].Value | [0], ip : PrivateIpAddress }' \
   --no-paginate \
-  | jq '[ .[] | { name: .[0][0][0], ip: .[0][1] } ]' \
   | jq 'group_by(.name) | map({ (.[0].name) : ([.[].ip]) })'
 }
 
