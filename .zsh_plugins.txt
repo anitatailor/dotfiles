@@ -29,6 +29,7 @@ robbyrussell/oh-my-zsh path:plugins/iterm2
 robbyrussell/oh-my-zsh path:plugins/web-search
 robbyrussell/oh-my-zsh path:plugins/history
 robbyrussell/oh-my-zsh path:plugins/gitignore
+#robbyrussell/oh-my-zsh path:plugins/virtualenvwrapper
 
 caarlos0/zsh-mkc
 supercrabtree/k

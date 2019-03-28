@@ -242,8 +242,9 @@ gfr() {
 
 
 # brew
-alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
+alias brewup='brew update; brew upgrade; brew cleanup --prune-prefix; brew cleanup; brew doctor'
 
+# enable fsad autojump
 eval "$(fasd --init auto)"
 
 
@@ -284,3 +285,8 @@ grepe () {
 
 # httpie
 alias https='http --default-scheme=https'
+
+# python3 venv
+alias py_env_mk="python3 -m venv env"
+alias py_env_on="source ./env/bin/activate"
+alias py_env_off=deactivate
