@@ -16,8 +16,8 @@ alias la='ls -A'
 alias l='ls -CF'
 
 ## sshttle
-stl-aws () {
-  sshuttle --dns -D --pidfile=/tmp/sshuttle.pid -x 13.126.0.23 -r sd5711@13.126.0.23 0.0.0.0/8 && echo 'Connected'
+stl-all () {
+  sshuttle --dns -D --pidfile=/tmp/sshuttle.pid -x 13.126.0.23 -r sd5711@13.126.0.23 0/0 && echo 'Connected'
 }
 
 stl () {

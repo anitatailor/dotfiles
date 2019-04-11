@@ -54,7 +54,8 @@ fi
 unset __conda_setup
 # <<< conda init <<<
 
+if [ -e /Users/saswatdutta/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/saswatdutta/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/saswatdutta/.sdkman"
 [[ -s "/Users/saswatdutta/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/saswatdutta/.sdkman/bin/sdkman-init.sh"
-if [ -e /Users/saswatdutta/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/saswatdutta/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
