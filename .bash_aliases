@@ -8,12 +8,10 @@ alias -- -='cd -'
 alias c=clear
 
 # some more ls aliases
-
-alias ll='ls -alF'
-
+alias ll='ls -AlF'
 alias la='ls -A'
-
 alias l='ls -CF'
+alias lh='ll -1t | head'
 
 ## sshttle
 stl-all () {
