@@ -285,6 +285,7 @@ grepe () {
 alias https='http --default-scheme=https'
 
 # python3 venv
-alias py_env_mk="python3 -m venv env"
+alias py_env_new="python3 -m venv env"
+alias py_env_del="rm -rf env"
 alias py_env_on="source ./env/bin/activate"
 alias py_env_off=deactivate

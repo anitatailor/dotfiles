@@ -59,3 +59,5 @@ if [ -e /Users/saswatdutta/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/sa
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/saswatdutta/.sdkman"
 [[ -s "/Users/saswatdutta/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/saswatdutta/.sdkman/bin/sdkman-init.sh"
+# Created by `userpath` on 2019-05-13 17:43:03
+export PATH="$PATH:/Users/saswatdutta/.local/bin"
