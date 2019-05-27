@@ -205,7 +205,7 @@ alias gb="git branch"
 
 alias gco="git checkout"
 
-alias gp="git fetch --all && git rebase"
+alias gp="git fetch --all --prune --prune-tags && git rebase"
 
 alias gcls="git reset --hard HEAD"
 
