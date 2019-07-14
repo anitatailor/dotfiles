@@ -50,7 +50,6 @@ let g:spacegray_italicize_comments = 1
 
 highlight Search ctermfg=9 	guifg=#ff0000 ctermbg=15 guibg=#ffffff gui=bold cterm=bold
 
- if has('mouse')
-   set mouse=a
- endif
-
+if has('mouse')
+  set mouse=a
+endif

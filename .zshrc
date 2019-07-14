@@ -136,9 +136,6 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 
 ########### alias
 
-# epoch in sec to date-time
-alias from-unixtime='date -r ' 
-
 # Colorful ls
 alias ls='gls --color=auto -v -F -h'
 # set LS_COLORS Borrowed from https://wiki.archlinux.org/index.php/Color_output_in_console#less .
@@ -176,6 +173,17 @@ __git_files () {
 #aws cli
 export PATH="$PATH":/Users/saswatdutta/Library/Python/3.7/bin/
 source /Users/saswatdutta/Library/Python/3.7/bin/aws_zsh_completer.sh
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
+
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/saswatdutta/.sdkman"

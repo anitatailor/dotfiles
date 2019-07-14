@@ -7,6 +7,16 @@ alias -- -='cd -'
 
 alias c=clear
 
+# epoch stuff
+from-unixtime () {
+    in="$1"
+    gdate --date="@${in:0:10}"
+}
+
+alias unixtime='date +%s'
+
+export HISTTIMEFORMAT="%F %T "
+
 # some more ls aliases
 alias ll='ls -AlF'
 alias la='ls -A'
@@ -23,7 +33,8 @@ stl () {
 }
 
 stl-off () {
-  [[ -f $SSHUTTLE_PID_FILE ]] && kill $(cat /tmp/sshuttle.pid) && echo 'Disconnected' 
+  # [[ -f $SSHUTTLE_PID_FILE ]] && 
+  kill $(cat /tmp/sshuttle.pid) && echo 'Disconnected' 
 }
 
 #alias stl="sshuttle --dns -r sd5711@13.126.0.23 0.0.0.0/0"
