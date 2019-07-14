@@ -17,6 +17,7 @@ alias unixtime='date +%s'
 
 export HISTTIMEFORMAT="%F %T "
 
+alias ip='curl "ipinfo.io"; echo'
 # some more ls aliases
 alias ll='ls -AlF'
 alias la='ls -A'
