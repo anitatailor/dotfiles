@@ -15,6 +15,15 @@ from-unixtime () {
 
 alias unixtime='date +%s'
 
+date-range () {
+  current="$1"
+  stop="$2"
+  until [[ $current > $stop ]]; do
+    echo "$current"
+    current=$(gdate -I -d "$current + 1 day")
+  done
+}
+
 export HISTTIMEFORMAT="%F %T "
 
 alias ip='curl "ipinfo.io"; echo'
