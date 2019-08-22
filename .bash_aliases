@@ -35,11 +35,11 @@ alias lh='ll -1t | head'
 
 ## sshttle
 stl-all () {
-  sshuttle --dns -D --pidfile=/tmp/sshuttle.pid -x 13.126.0.23 -r sd5711@13.126.0.23 0/0 && echo 'Connected'
+  sshuttle --dns -D --pidfile=/tmp/sshuttle.pid -x 13.126.0.23 -r sd5711@bastion.vyom.com 0/0 && echo 'Connected'
 }
 
 stl () {
-  sshuttle --dns -D --pidfile=/tmp/sshuttle.pid -x 13.126.0.23 -r sd5711@13.126.0.23 10.0.0.0/0 && echo 'Connected'
+  sshuttle --dns -D --pidfile=/tmp/sshuttle.pid -x 13.126.0.23 -r sd5711@bastion.vyom.com 10.0.0.0/0 && echo 'Connected'
 }
 
 stl-off () {
