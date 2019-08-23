@@ -1,6 +1,18 @@
 #dot files git config
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+alias cp='cp -irv'
+alias mv='mv -iv'
+alias mkdir='mkdir -pv'
+
+to () {
+  cd "$1"
+  pwd
+  echo
+  ls -ACF
+  echo
+}
+
 alias ...='../..'
 alias ....='../../..'
 alias -- -='cd -'
@@ -308,5 +320,9 @@ alias https='http --default-scheme=https'
 # python3 venv
 alias py_env_new="python3 -m venv env"
 alias py_env_del="rm -rf env"
-alias py_env_on="source ./env/bin/activate"
-alias py_env_off=deactivate
+alias py_env_on="source ./env/bin/activate && which python3"
+alias py_env_off="deactivate"
+
+alias df="gdf -Tha --total"
+alias du="gdu -ach | sort -h"
+alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
