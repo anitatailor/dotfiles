@@ -47,16 +47,16 @@ alias lh='ll -1t | head'
 
 ## sshttle
 stl-all () {
-  sshuttle --dns -D --pidfile=/tmp/sshuttle.pid -x 13.126.0.23 -r sd5711@bastion.vyom.com 0/0 && echo 'Connected'
+  sshuttle --dns -D --pidfile=/tmp/sshuttle.pid -x 13.126.0.23 -r sd5711@bastion.vyom.com 0/0 && curl "ipinfo.io"
 }
 
 stl () {
-  sshuttle --dns -D --pidfile=/tmp/sshuttle.pid -x 13.126.0.23 -r sd5711@bastion.vyom.com 10.0.0.0/0 && echo 'Connected'
+  sshuttle --dns -D --pidfile=/tmp/sshuttle.pid -x 13.126.0.23 -r sd5711@bastion.vyom.com 10.0.0.0/0 && curl "ipinfo.io"
 }
 
 stl-off () {
   # [[ -f $SSHUTTLE_PID_FILE ]] && 
-  kill $(cat /tmp/sshuttle.pid) && echo 'Disconnected' 
+  kill $(cat /tmp/sshuttle.pid) && curl "ipinfo.io"
 }
 
 #alias stl="sshuttle --dns -r sd5711@13.126.0.23 0.0.0.0/0"
@@ -126,8 +126,17 @@ unmnt-logs ()
 
 alias kms-get="aws ssm get-parameters --region ap-south-1 --with-decryption --names "
 
-ec2-ip () {
+ec2-name () {
 
+  ips="$*"
+
+  aws ec2 describe-instances \
+  --filters "Name=private-ip-address,Values=$ips" \
+  --query 'Reservations[].Instances[].Tags[?Key==`Name`].Value' \
+  --no-paginate --output=text
+}
+
+ec2-ip () {
 
   aws ec2 describe-instances \
   --filters "Name=tag:Name,Values=$1" "Name=instance-state-code,Values=16" \
