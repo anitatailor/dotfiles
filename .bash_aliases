@@ -335,3 +335,8 @@ alias py_env_off="deactivate"
 alias df="gdf -Tha --total"
 alias du="gdu -ach | sort -h"
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
+
+# data
+i() {
+  (head -n 5; tail -n 5) < "$1" | column -t
+}
