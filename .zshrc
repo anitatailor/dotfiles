@@ -7,6 +7,8 @@ DISABLE_AUTO_UPDATE=true
 # add a function path
 fpath=($ZSH/functions $ZSH/completions $fpath)
 
+export PATH="/usr/local/sbin:$PATH"
+
 # Enable autocompletions
 autoload -Uz compaudit compinit 
 #promptinit
@@ -24,6 +26,11 @@ zmodload -i zsh/complist
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=5000
 SAVEHIST=$HISTSIZE
+
+alias hh=hstr                    # hh to be alias for hstr
+export HISTFILE=~/.zsh_history  # ensure history file visibility
+export HSTR_CONFIG=hicolor        # get more colors
+bindkey -s "\C-r" "\eqhstr\n"     # bind hstr to Ctrl-r (for Vi mode check doc)
 
 
 # zsh Options
@@ -142,8 +149,7 @@ alias ls='gls --color=auto -v -F -h'
 eval $(gdircolors -p | perl -pe 's/^((CAP|S[ET]|O[TR]|M|E)\w+).*/$1 00/' | gdircolors -)
 
 source ~/.bash_aliases
-source /Users/saswatdutta/git-extras/etc/git-extras-completion.zsh
-
+source /usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
 
 
 # set options for less
@@ -169,11 +175,6 @@ __git_files () {
     _wanted files expl 'local files' _files
 }
 
-
-#aws cli
-export PATH="$PATH":/Users/saswatdutta/Library/Python/3.7/bin/
-source /Users/saswatdutta/Library/Python/3.7/bin/aws_zsh_completer.sh
-
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
@@ -184,7 +185,9 @@ source /Users/saswatdutta/Library/Python/3.7/bin/aws_zsh_completer.sh
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
 
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/saswatdutta/.sdkman"
-[[ -s "/Users/saswatdutta/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/saswatdutta/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="/Users/sas/.sdkman"
+[[ -s "/Users/sas/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/sas/.sdkman/bin/sdkman-init.sh"

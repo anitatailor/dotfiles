@@ -34,9 +34,6 @@ fi
 
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-#aws cli
-export PATH="$PATH":/Users/saswatdutta/Library/Python/3.7/bin/
-
 # added by Anaconda3 2018.12 installer
 # >>> conda init >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -54,10 +51,6 @@ fi
 unset __conda_setup
 # <<< conda init <<<
 
-if [ -e /Users/saswatdutta/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/saswatdutta/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/saswatdutta/.sdkman"
-[[ -s "/Users/saswatdutta/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/saswatdutta/.sdkman/bin/sdkman-init.sh"
-# Created by `userpath` on 2019-05-13 17:43:03
-export PATH="$PATH:/Users/saswatdutta/.local/bin"
+export SDKMAN_DIR="/Users/sas/.sdkman"
+[[ -s "/Users/sas/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/sas/.sdkman/bin/sdkman-init.sh"

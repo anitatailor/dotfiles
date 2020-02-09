@@ -40,15 +40,15 @@
     last = log -1 HEAD
 	ec = config --global -e
 	save = !git add -A && git commit -m '@WIP SAVEPOINT'
-	wip = commit -am "WIP"
-	undo = reset HEAD~1 --mixed
+	wip = commit -am WIP
+	undo = !/usr/local/bin/legit undo
 	amend = commit -a --amend
 	wipe = !git add -A && git commit -qm 'WIPE TEMP SAVEPOINT' && git reset HEAD~1 --hard
-	bclean = "!f() { git checkout ${1-master} && git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d; }; f"
+	bclean = "!f() { git checkout ${1-master} && git branch --merged ${1-master} | grep -v  ${1-master}$ | xargs git branch -d; }; f"
     lc = log ORIG_HEAD.. --stat --no-merges
     changes = diff --name-status -r
     diffstat = diff --stat -r
-    new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
+    new = !sh -c 'git log $1@{1}..$1@{0} $@'
     whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
     graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
     record = ! sh -c '(git add -p -- $@ && git commit) || git reset' --
@@ -62,12 +62,12 @@
 
 # Get the current branch name (not so useful in itself, but used in
 # other aliases)
-	branch-name = "!git rev-parse --abbrev-ref HEAD"
+	branch-name = !git rev-parse --abbrev-ref HEAD
 # Push the current branch to the remote "origin", and set it to track
 # the upstream branch
-	publish = "!git push -u origin $(git branch-name)"
+	publish = !/usr/local/bin/legit publish
 # Delete the remote version of the current branch
-	unpublish = "!git push origin :$(git branch-name)"
+	unpublish = !/usr/local/bin/legit unpublish
 # Delete a branch and recreate it from master — useful if you have, say,
 # a development branch and a master branch and they could conceivably go
 # out of sync
@@ -82,14 +82,14 @@
 	merge-span = "!f() { echo $(git log -1 $2 --merges --pretty=format:%P | cut -d' ' -f1)$1$(git log -1 $2 --merges --pretty=format:%P | cut -d' ' -f2); }; f"
 
 # Find the commits that were introduced by a merge
-	merge-log = "!git log `git merge-span .. $1`"
+	merge-log = !git log `git merge-span .. $1`
 # Show the changes that were introduced by a merge
-	merge-diff = "!git diff `git merge-span ... $1`"
+	merge-diff = !git diff `git merge-span ... $1`
 # As above, but in your difftool
-	merge-difftool = "!git difftool `git merge-span ... $1`"
+	merge-difftool = !git difftool `git merge-span ... $1`
 
 # Interactively rebase all the commits on the current branch
-	rebase-branch = "!git rebase -i `git merge-base master HEAD`"
+	rebase-branch = !git rebase -i `git merge-base master HEAD`
 
 #
 # Working with files
@@ -103,7 +103,7 @@
 # Reverse the above
 	unassume = update-index --no-assume-unchanged
 # Show the files that are currently assume-unchanged
-	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+	assumed = !git ls-files -v | grep ^h | cut -c 3-
 
 # Checkout our version of a file and add it
 	ours = "!f() { git checkout --ours $@ && git add $@; }; f"
@@ -112,13 +112,16 @@
 
 # Delete any branches that have been merged into master
 # See also: https://gist.github.com/robmiller/5133264
-	delete-merged-branches = "!git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+	delete-merged-branches = !git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d
 	unmerged = !git --no-pager diff --name-only --diff-filter=U
 	conflicts = !git --no-pager diff --check
+	sync = !/usr/local/bin/legit sync
+	branches = !/usr/local/bin/legit branches
+	update = !git fetch --all --prune --prune-tags && git rebase && git submodule update --init --recursive
 
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
-	editor = sublime --wait --new-window
+	editor = subl -n -w
 
 
 [pager]
@@ -142,3 +145,8 @@
 [tig] show-rev-graph = true
 [tig "color"] cursor = yellow red bold
 [tig "bind"] generic = P parent
+[help]
+	autocorrect = 1
+[filesystem "Eclipse OpenJ9|1.8.0_232|/dev/disk1s1"]
+	timestampResolution = 1001 milliseconds
+	minRacyThreshold = 0 nanoseconds
