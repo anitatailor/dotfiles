@@ -1,5 +1,5 @@
 [user]
-	name = saswata-dutta
+	name = saswata
 	email = saswat.dutta@gmail.com
 [credential]
 	helper = cache
@@ -143,8 +143,11 @@
 	trustExitCode = false
 
 [tig] show-rev-graph = true
+ show-rev-graph = true
 [tig "color"] cursor = yellow red bold
+ cursor = yellow red bold
 [tig "bind"] generic = P parent
+ generic = P parent
 [help]
 	autocorrect = 1
 [filesystem "Eclipse OpenJ9|1.8.0_232|/dev/disk1s1"]

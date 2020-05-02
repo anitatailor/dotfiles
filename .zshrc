@@ -185,9 +185,13 @@ __git_files () {
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
 
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# todo pyenvs
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/sas/.sdkman"
-[[ -s "/Users/sas/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/sas/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="/Users/sasdutta/.sdkman"
+[[ -s "/Users/sasdutta/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/sasdutta/.sdkman/bin/sdkman-init.sh"
+
+# Created by `userpath` on 2020-04-17 16:48:49
+export PATH="$PATH:/Users/sasdutta/.local/bin"
