@@ -330,6 +330,10 @@ alias py_env_del="rm -rf env"
 alias py_env_on="source ./env/bin/activate && which python3"
 alias py_env_off="deactivate"
 
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
 alias df="gdf -Tha --total"
 alias du="gdu -ach | sort -h"
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
@@ -345,4 +349,3 @@ export PYTHONPATH=$SPARK_HOME/python:$PYTHONPATH
 
 export HADOOP_HOME=$(brew info hadoop | grep '/usr' | head -n 1 | cut -f 1 -d " ")/libexec
 export LD_LIBRARY_PATH=$HADOOP_HOME/lib/native/:$LD_LIBRARY_PATH
-

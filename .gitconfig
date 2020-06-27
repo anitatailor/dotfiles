@@ -137,6 +137,7 @@
 [diff]
 	guitool = kdiff3
 	algorithm = histogram
+	colorMoved = zebra
 [difftool "kdiff3"]
 	trustExitCode = false
 [mergetool "kdiff3"]
@@ -153,3 +154,7 @@
 [filesystem "Eclipse OpenJ9|1.8.0_232|/dev/disk1s1"]
 	timestampResolution = 1001 milliseconds
 	minRacyThreshold = 0 nanoseconds
+[pull]
+	rebase = true
+[fetch]
+	prune = true

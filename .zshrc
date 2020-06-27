@@ -103,7 +103,10 @@ export WORDCHARS='*?[]~&;!$%^<>'
 source <(antibody init)
 
 # Plugins
-antibody bundle < ~/.zsh_plugins.txt
+antibody bundle < ~/.zsh_plugins
+
+# remove clashing aliases by plugins
+unalias -m 'st'
 
 #prompts
 #source ~/.space_ship_prompt_config
@@ -189,9 +192,19 @@ __git_files () {
 # eval "$(pyenv init -)"
 # eval "$(pyenv virtualenv-init -)"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/sasdutta/.sdkman"
-[[ -s "/Users/sasdutta/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/sasdutta/.sdkman/bin/sdkman-init.sh"
+export SPARK_HOME='/usr/local/spark'
+path+=('/usr/local/spark/bin')
+export PATH
+alias spark='spark-shell --conf spark.driver.extraJavaOptions="-Dscala.color"'
 
 # Created by `userpath` on 2020-04-17 16:48:49
 export PATH="$PATH:/Users/sasdutta/.local/bin"
+
+dev_dsk () {
+    kinit -f
+    mwinit -o
+}
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/sasdutta/.sdkman"
+[[ -s "/Users/sasdutta/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/sasdutta/.sdkman/bin/sdkman-init.sh"
