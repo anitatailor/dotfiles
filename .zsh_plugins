@@ -45,6 +45,9 @@ mafredri/zsh-async
 
 carloscuesta/materialshell
 
+# let it come after completions
+Aloxaf/fzf-tab
+
 ## prompt
 #denysdovhan/spaceship-prompt
 #sindresorhus/pure
