@@ -107,6 +107,10 @@ antibody bundle < ~/.zsh_plugins
 
 # remove clashing aliases by plugins
 unalias -m 'st'
+# modify plugins
+alias k='k -Ah'
+
+export BAT_PAGER="less -r"
 
 #prompts
 #source ~/.space_ship_prompt_config
@@ -134,15 +138,11 @@ bindkey '^[[6~' dirhistory_zle_dirhistory_down
 bindkey '^[[1;2H' insert-cycledleft
 bindkey '^[[1;2F' insert-cycledright
 
-
 #############
 # Termcolor
 export TERM=xterm-256color
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='ag -g ""'
 
 ########### alias
 
@@ -204,6 +204,9 @@ dev_dsk () {
     kinit -f
     mwinit -o
 }
+
+# config for fzf
+source ~/.zsh_fzf.sh
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/sasdutta/.sdkman"
