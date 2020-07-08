@@ -104,5 +104,6 @@ fwd() {
 unalias z 2> /dev/null
 z() {
   [ $# -gt 0 ] && fasd_cd -d "$*" && return
-  cd $(fasd -dl 2>&1 | fzf --height 40% --reverse --inline-info +s --tac --query "${*##-* }")
+  dest=$(fasd -dl 2>&1 | fzf --height 40% --reverse --inline-info +s --tac --query "${*##-* }")
+  cd "${dest}"
 }

@@ -118,6 +118,7 @@
 	sync = !/usr/local/bin/legit sync
 	branches = !/usr/local/bin/legit branches
 	update = !git fetch --all --prune --prune-tags && git rebase && git submodule update --init --recursive
+	ls = !git ls-tree -r master --name-only
 
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
