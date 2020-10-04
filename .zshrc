@@ -200,10 +200,14 @@ alias spark='spark-shell --conf spark.driver.extraJavaOptions="-Dscala.color"'
 # Created by `userpath` on 2020-04-17 16:48:49
 export PATH="$PATH:/Users/sasdutta/.local/bin"
 
+# amzn
 dev_dsk () {
     kinit -f
     mwinit -o
 }
+
+
+export PATH=$HOME/.toolbox/bin:$PATH
 
 # config for fzf
 source ~/.zsh_fzf.sh
@@ -211,3 +215,4 @@ source ~/.zsh_fzf.sh
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/sasdutta/.sdkman"
 [[ -s "/Users/sasdutta/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/sasdutta/.sdkman/bin/sdkman-init.sh"
+

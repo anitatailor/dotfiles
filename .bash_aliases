@@ -349,3 +349,8 @@ export PYTHONPATH=$SPARK_HOME/python:$PYTHONPATH
 
 export HADOOP_HOME=$(brew info hadoop | grep '/usr' | head -n 1 | cut -f 1 -d " ")/libexec
 export LD_LIBRARY_PATH=$HADOOP_HOME/lib/native/:$LD_LIBRARY_PATH
+
+# youtube
+yt() {
+  youtube-dl "https://www.youtube.com/watch?v=$1"
+}

@@ -118,7 +118,8 @@
 	sync = !/usr/local/bin/legit sync
 	branches = !/usr/local/bin/legit branches
 	update = !git fetch --all --prune --prune-tags && git rebase && git submodule update --init --recursive
-	ls = !git ls-tree -r master --name-only
+	ls = !git ls-tree -r HEAD --name-only
+	dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)%an <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
 
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
@@ -159,3 +160,5 @@
 	rebase = true
 [fetch]
 	prune = true
+[push]
+	default = simple

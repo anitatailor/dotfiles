@@ -7,3 +7,5 @@ fi
 export PATH="$PATH:/Users/saswatdutta/.local/bin"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+export PATH=$HOME/.toolbox/bin:$PATH
