@@ -2035,7 +2035,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 384 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>354 212 730 502 0 0 1440 877 </string>
+	<string>538 279 730 502 0 0 1440 900 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>734 241 730 502 0 0 1440 900 </string>
 	<key>NeverWarnAboutShortLivedSessions_35EEBAAB-418C-4ED3-996A-0F3D1EA89A53</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_35EEBAAB-418C-4ED3-996A-0F3D1EA89A53_selection</key>
@@ -2970,7 +2972,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>614856738.33941305</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>83</integer>
+	<integer>164</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -3823,7 +3825,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-07-08T11:14:13Z</date>
+	<date>2020-10-05T05:33:12Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
@@ -3834,6 +3836,8 @@
 	<true/>
 	<key>SoundForEsc</key>
 	<false/>
+	<key>TabStyleWithAutomaticOption</key>
+	<integer>1</integer>
 	<key>ThreeFingerEmulates</key>
 	<true/>
 	<key>VisualIndicatorForEsc</key>
