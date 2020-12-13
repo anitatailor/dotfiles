@@ -250,6 +250,32 @@ n ()
 }
 
 
+# https://github.com/gokcehan/lf/blob/master/etc/lfcd.sh
+bindkey -s '^o' 'lfcd\n'
+lfcd () {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        if [ -d "$dir" ]; then
+            if [ "$dir" != "$(pwd)" ]; then
+                cd "$dir"
+            fi
+        fi
+    fi
+}
+
+bindkey -s '^f' 'browse_files\n'
+browse_files () {
+    if [ -z "$1" ]
+    then
+        fd -t f | fzf | gxargs -ro vi
+    else
+        fd -t f -e "$1" | fzf | gxargs -ro vi
+    fi
+}
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/sasdutta/.sdkman"
 [[ -s "/Users/sasdutta/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/sasdutta/.sdkman/bin/sdkman-init.sh"
